@@ -8,7 +8,8 @@ let firstImgWidth = firstImg.clientwidth + 14; //getting first img width & addin
 
 arrowIcons.forEach(icon => {
     icon.addEventListener("click", () =>{
-        console.log(icon);
+        //If clicked icon is left, reduce width value from the carousel scroll left else add to it
+       carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
     });
 });
 
