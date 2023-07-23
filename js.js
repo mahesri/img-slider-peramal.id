@@ -4,18 +4,17 @@ arrowIcons = document.querySelectorAll(".wrapper i");
 
 
 let isDragStart = false, prevPageX, prevScrollLeft;
-let firstImgWidth = firstImg.clientWidth + 14; //getting first img width & adding 14 margin value
-let scrollWidth = carousel.scrollWidth - carousel.clientWidth; //Membuat batas maksimal lebar scroll 
 
 const showHideIcon = () => {
     // Menampilkan dan menyembunyikan icon next/prev yang setara dengan nilai kiri carousel 
+    let scrollWidth = carousel.scrollWidth - carousel.clientWidth; //Membuat batas maksimal lebar scroll 
     arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
     arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
 }
 
 arrowIcons.forEach(icon => {
     icon.addEventListener("click", () => {
-        console.log("Ikon diklik!");
+        let firstImgWidth = firstImg.clientWidth + 14; //getting first img width & adding 14 margin value
         //If clicked icon is left, reduce width value from the carousel scroll left else add to it
        
         // carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
@@ -56,5 +55,13 @@ const dragStop = () => {
 }
 
 carousel.addEventListener("mousedown", DragStart);
+carousel.addEventListener("touchstart", DragStart);
+
+
 carousel.addEventListener("mousemove", dragging);
+carousel.addEventListener("touchmove", dragging);
+
+
 carousel.addEventListener("mouseup", dragStop);
+carousel.addEventListener("mouseleave", dragStop);
+carousel.addEventListener("touchend", dragStop);
