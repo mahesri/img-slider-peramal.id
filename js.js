@@ -1,10 +1,12 @@
 const carousel = document.querySelector(".carousel"),
-arrowIcons = document.querySelector(".carousel");
+firstImg =  carousel.querySelectorAll("img")[0];
+arrowIcons = document.querySelectorAll(".wrapper i");
 
 
 let isDragStart = false, prevPageX, prevScrollLeft;
+let firstImgWidth = firstImg.clientwidth + 14; //getting first img width & adding 14 margin value
 
-arrowIcons.forEacah(icon => {
+arrowIcons.forEach(icon => {
     icon.addEventListener("click", () =>{
         console.log(icon);
     });
