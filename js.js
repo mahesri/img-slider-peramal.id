@@ -3,7 +3,7 @@ firstImg =  carousel.querySelectorAll("img")[0],
 arrowIcons = document.querySelectorAll(".wrapper i");
 
 
-let isDragStart = false, prevPageX, prevScrollLeft, positionDiff;
+let isDragStart = false, isdragging = false, prevPageX, prevScrollLeft, positionDiff;
 
 const showHideIcon = () => {
     // Menampilkan dan menyembunyikan icon next/prev yang setara dengan nilai kiri carousel 
@@ -34,6 +34,8 @@ arrowIcons.forEach(icon => {
 });
 
 const autoslide = () => {
+    if(carousel.scrollLeft == (carousel.scrollWidth - carousel.clientWidth)) return;
+    // Jika tidak ada image dikiri maka akan kembali kesini
     positionDiff = Math.abs(positionDiff); //Membuat positionDiff bernilai positif
     let firstImgWidth = firstImg.clientWidth + 14;
     // Membuat perbedaan antara nilai yang dibutuhkan untuk menambahkan atau mengurangi ketika gambar digeser kekiri dan gambar akan ditengah
@@ -41,8 +43,11 @@ const autoslide = () => {
 
     if(carousel.scrollLeft > prevScrollLeft ) {
 
-       return console.log("User sedang ngescroll ke kiri");
+       return carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
     }
+    // Jika user scroll ke kiri
+    carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+   
 }
 
 const DragStart = (e) => {
@@ -56,6 +61,7 @@ const dragging = (e) => {
     // Scrolling images/carousel to left according to mouse pointer
     if(!isDragStart) return;
     e.preventDefault();
+    isdragging = true;
     carousel.classList.add("dragging");
     positionDiff = (e.pageX || e.touches[0].pageX)- prevPageX;
     carousel.scrollLeft = prevScrollLeft - positionDiff;
@@ -64,6 +70,9 @@ const dragging = (e) => {
 const dragStop = () => {
     isDragStart = false;
     carousel.classList.remove("dragging");
+
+    if(!isdragging ) return;
+    isdragging = false;
     autoslide();
 }
 
