@@ -3,7 +3,7 @@ firstImg =  carousel.querySelectorAll("img")[0],
 arrowIcons = document.querySelectorAll(".wrapper i");
 
 
-let isDragStart = false, prevPageX, prevScrollLeft;
+let isDragStart = false, prevPageX, prevScrollLeft, positionDiff;
 
 const showHideIcon = () => {
     // Menampilkan dan menyembunyikan icon next/prev yang setara dengan nilai kiri carousel 
@@ -33,10 +33,22 @@ arrowIcons.forEach(icon => {
     });
 });
 
+const autoslide = () => {
+    positionDiff = Math.abs(positionDiff); //Membuat positionDiff bernilai positif
+    let firstImgWidth = firstImg.clientWidth + 14;
+    // Membuat perbedaan antara nilai yang dibutuhkan untuk menambahkan atau mengurangi ketika gambar digeser kekiri dan gambar akan ditengah
+    let valDifference = firstImgWidth - positionDiff;
+
+    if(carousel.scrollLeft > prevScrollLeft ) {
+
+       return console.log("User sedang ngescroll ke kiri");
+    }
+}
+
 const DragStart = (e) => {
     // Updatating global variable value on mouse dwon event
     isDragStart = true;
-    prevPageX = e.pageX
+    prevPageX = e.pageX || e.touches[0].pageX;
     prevScrollLeft = carousel.scrollLeft;
 }
 
@@ -45,13 +57,14 @@ const dragging = (e) => {
     if(!isDragStart) return;
     e.preventDefault();
     carousel.classList.add("dragging");
-    let positionDiff = e.pageX - prevPageX;
+    positionDiff = (e.pageX || e.touches[0].pageX)- prevPageX;
     carousel.scrollLeft = prevScrollLeft - positionDiff;
 }
 
 const dragStop = () => {
     isDragStart = false;
     carousel.classList.remove("dragging");
+    autoslide();
 }
 
 carousel.addEventListener("mousedown", DragStart);
