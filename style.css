@@ -81,4 +81,7 @@ body {
     .carousel img {
         width : 100%;
     }
+    .carousel img {
+        width: calc(100% / 3);
+    }
 }
