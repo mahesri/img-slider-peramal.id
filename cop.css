@@ -7,6 +7,7 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -17,26 +18,59 @@ body{
 
 .container {
     padding: 0 2rem 0 2rem ;
-    background-color: wheat;
     height: 100vh;
 }
 
 /* Main Section */
 
-.main .wrapper .carousel {
-
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    gap : 16px;
+.main h2 {
+    margin: 2rem 0 2rem 0;
 }
 
+.main .tag {
+    margin-bottom: 1.5rem;
+}
 
-.main .wrapper .carousel img {
-    height: 345px;
-    border-radius: 50% ;
-    object-fit: cover;
+.container{
+    /* background-image: url('img/bg.jpg'); */
+    background-repeat: none;
+    background-position-x: center;
+}
+
+.carousel {
+    height: 160px;
+    list-style-type: none;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(100% /12);
+    gap: 16px;
+    overflow: hidden;
+}
+
+.carousel .slide {
+    background-color: #334;
+    padding: 0.5rem;
+    height: 145px;
+    max-width: 90px;
+    width: 100%;
+    border-radius: 5%;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.carousel .slide img {
+    border-radius: 50%;
+    border : 1px solid #fff;
+}
+
+.carousel .slide h3 {
+   font-size: 0.8rem;
+   font-weight: 100;
+   text-align: center;
+   margin-top: 1.5rem;
+}
+
+.h3-main{
+    margin-top: 1.5rem;
 }
