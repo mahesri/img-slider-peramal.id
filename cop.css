@@ -1,0 +1,42 @@
+:root {
+    --orangePID : #F57E20;
+    --black :black;
+    --B1 :#333;
+
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 0 2rem 0 2rem ;
+    background-color: wheat;
+    height: 100vh;
+}
+
+/* Main Section */
+
+.main .wrapper .carousel {
+
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    gap : 16px;
+}
+
+
+.main .wrapper .carousel img {
+    height: 345px;
+    border-radius: 50% ;
+    object-fit: cover;
+}
