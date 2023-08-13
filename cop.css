@@ -74,3 +74,12 @@ body{
 .h3-main{
     margin-top: 1.5rem;
 }
+
+.btn {
+    margin-top: 3rem;
+    display: inline-block;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    background-color:var(--orangePID);
+
+}
