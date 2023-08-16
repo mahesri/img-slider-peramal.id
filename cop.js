@@ -26,5 +26,5 @@ carousel.addEventListener("touchmove", dragging);
 carousel.addEventListener("mousedown", dragStart);
 carousel.addEventListener("touchstart", dragStart);
 
-document.addEventListener("moudeup", dragStop);
+document.addEventListener("mouseup", dragStop);
 document.addEventListener("touchend", dragStop);

@@ -233,11 +233,18 @@ footer {
 }
 
 .footer h4 {
-    color: #fff;
     text-align: center;
     max-width: 1200px;
     width:100%;
     max-width: 100%;
     font-weight: 300;
     font-size: 0.8rem;
+}
+
+.footer a {
+    color: #fff;
+}
+
+.footer a:hover {
+    color: var(--orangePID);
 }
