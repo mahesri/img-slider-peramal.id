@@ -177,6 +177,7 @@ h2 {
    grid-auto-flow: column;
    grid-auto-columns: calc((100% / 5 - 2px));
    list-style-type: none;
+   overflow: hidden;
 }
 
 .Artikel h3 {
@@ -259,8 +260,6 @@ footer {
     color: var(--orangePID);
 }
 
-@media screen and (masx-width : 740px) {
-    .container {
-        padding: 0 0.3rem 0 0.3rem ;
-    }
-}
+
+
+
