@@ -140,6 +140,10 @@ h2 {
 
 /* Artikel Section */
 
+.Artikel {
+    height: 60vh;
+}
+
 .wrapper .kategori {
     display: flex;
     width: 100%;
@@ -209,16 +213,22 @@ h2 {
 }
 
 footer {
-    /* height: 100vh; */
-    color: #fff;
-    /* width: 100vw; */
+   margin-top: 5rem;
+   color: #fff;
+   text-align: center;
+}
+
+.footer span {
+    font-size: 1.3rem;
+    text-align: center;
+    align-items: center;
 }
 
 .link {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5rem;
+    margin: 0.8rem;
     list-style-type: none;
 }
 
@@ -247,4 +257,10 @@ footer {
 
 .footer a:hover {
     color: var(--orangePID);
+}
+
+@media screen and (masx-width : 740px) {
+    .container {
+        padding: 0 0.3rem 0 0.3rem ;
+    }
 }
