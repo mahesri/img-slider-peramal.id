@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <style> 
+
+    :root{
+        --primary : #F57E20;
+        --bg :#333;
+    }
+    
+     .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+            
+            @-webkit-keyframes fade {
+                from {
+                    opacity: .4;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+            @keyframe fade {
+                from {
+                    opacity : .4;
+                }
+                to {
+                    opacity : 1;
+                }
+            }
+
+        /* Laptop */
+
+      @media (max-width : 1366px){
+          
+          h2{
+              text-align: center;
+              font-size: 3rem
+          }
+          
+          h2:hover{
+            color: var(--primary);    
+          }
+          
+            .container .conten-slide {
+                display: flex;
+                justify-content: center;
+                width: calc((100% - 20px));
+                padding-left: 38%;
+            }
+
+            .container .conten-slide img {
+                max-width: 40%;
+                height: auto;
+                border-radius: 5% ;
+                vertical-align: center;
+                
+            }
+             .imgslide {
+                display: flex;
+            }
+
+            .prev, .next{
+                width: 45px;
+                height: 45px;
+                cursor:pointer;
+                color: #333;
+                position: absolute;
+                top: 45%;
+                padding: 3px;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                user-select: none;
+                background-color: #fff;
+                border-radius :50%;
+                text-align: center;
+                justify-content: center;
+                display :flex;
+                align-items: center;
+                
+            }
+
+            .next {
+                right:33%;
+            }
+
+            .prev{
+                left:33%;
+            }
+
+            .prev:hover, .next:hover {
+                background-color: var(--primary);
+            }
+
+            .conten-slide .numberSlide {
+                color:#F57E20;
+                font-weight: bold ;
+                padding: 8px 12px;
+                position: absolute;
+                text-shadow: 1px 1px #333;
+                max-width: 25%;
+            }
+
+
+      }
+
+        /* Tablet */
+
+        @media (max-width : 768px ){
+            
+              .container .conten-slide {
+                display: flex;
+                justify-content: center;
+                padding-left:25%;
+            }
+
+            .container .conten-slide img {
+                max-width: 70%;
+                height: auto;
+                border-radius: 5% ;
+                vertical-align: middle;
+               
+            }
+            
+             .imgslide {
+                display: inline-block;
+            }
+
+            .prev, .next{
+                
+                cursor:pointer;
+                color: #333;
+                position: absolute;
+                top:45%;
+                width: auto;
+                padding: 3px;
+                font-weight: 100;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 0px 0px 0;
+                user-select: none;
+                background-color: rgba(0, 0, 0, 1.8);
+                justify-content: center;
+                display : flex ;
+                align-items: center;
+                height : 45px;
+                width : 45px;
+                border-radius : 50%;
+                background-color: #fff;
+            }
+
+            .next {
+                right:3%;
+             }
+
+            .prev{
+                left:3%;
+            }
+
+            .prev:hover, .next:hover {
+                background-color: var(--primary);
+            }
+
+            .conten-slide .numberSlide {
+                color:#F57E20;
+                font-weight: bold ;
+                font-size: 3rem;
+                padding: 8px 12px 0 12px ;
+                position: absolute;
+                text-shadow: 1px 1px #333;
+                max-width: 50%;
+            }
+            
+            h2{
+                text-align: center;
+                font-size: 1.8rem;
+            }
+            
+            h2:hover {
+                color : var(--primary);
+            }
+
+
+        }
+        
+        /* Mobile  */
+
+        @media (max-width : 450px){
+
+            
+            
+            .container .conten-slide {
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+               
+                 
+            }
+
+            .container .conten-slide img {
+                max-width: 70%;
+                height: auto;
+                border-radius: 5% ;
+                vertical-align: center;
+               
+            }
+
+            .text {
+                color: var(--primary);
+                font-size: 3rem;
+                text-align: center;
+                padding: 5px 0 5px 0;
+                font-weight: 100;
+                display: none;
+            }
+
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+              
+            }
+
+            .content-slide {
+                max-width: 70%;
+                position: relative;
+                margin: auto;
+                
+                
+            }
+
+            .imgslide {
+                display: inline-block;
+            }
+
+            .prev, .next{
+                
+                cursor:pointer;
+                color: #333;
+                position: absolute;
+                width: auto;
+                padding: 3px;
+                font-weight: 100;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 0px 0px 0;
+                user-select: none;
+                background-color: rgba(0, 0, 0, 1.8);
+                width : 45px;
+                height: 45px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #fff;
+                border-radius: 50%;
+            }
+
+            .next {
+                right:0;
+               }
+
+            .prev{
+                left:0;
+            }
+
+            .prev:hover, .next:hover {
+                background-color: var(--primary);
+            }
+
+            .conten-slide .numberSlide {
+                color:#F57E20;
+                font-weight: bold ;
+                font-size: 12px;
+                padding: 8px 12px;
+                position: absolute;
+                text-shadow: 1px 1px #333;
+                max-width: 50%;
+            }
+            
+            h2 {
+                text-align: center;
+                font-size: 3rem;
+            }
+            
+            h2:hover {
+                color: var(--primary)
+            }
+
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="conten-slide">
+            
+            <div class="imgslide fade">
+                <a href="https://blog.peramal.id/self-upgrade-trik-pengembangan-diri-yang-efektif/"><div class="numberSlide">Menjadi Young On Top</div>
+                <img src="https://blog.peramal.id/wp-content/uploads/2023/05/menjadi-young-on-top-scaled.jpg" alt="menjadi-young-on-top"></a>
+               
+            </div>
+            
+            <div class="imgslide fade">
+                <a href="https://blog.peramal.id/self-upgrade-trik-pengembangan-diri-yang-efektif/"><div class="numberSlide">Self Upgrade</div>
+                <img src="https://blog.peramal.id/wp-content/uploads/2023/05/Self-Upgrade3.jpg" alt="menjadi-young-on-top"></a>
+            </div>
+            
+            <div class="imgslide fade">
+                <a href="https://blog.peramal.id/mengatasi-toxic-relationship/"><div class="numberSlide">Mengatasi Toxic Relationship</div>
+                <img src="https://blog.peramal.id/wp-content/uploads/2023/06/Mengatasi-Toxic-Relationship.jpg" alt="menjadi-young-on-top"></a>
+                
+            </div>
+            
+            
+            <div class="imgslide fade">
+                <a href="https://blog.peramal.id/mengatasi-kecanduan-teknologi/"><div class="numberSlide">Mengatasi Kecanduan Teknologi</div>
+                <img src="https://blog.peramal.id/wp-content/uploads/2023/05/Mengatasi-Kecanduan-Teknologi-scaled.jpg" alt="menjadi-young-on-top"></a>
+                
+            </div>
+            
+             <div class="imgslide fade">
+                <a href="https://blog.peramal.id/ramalan-bagian-dari-budaya/"><div class="numberSlide">Ramalan Bagian Dari Budaya</div>
+                <img src="https://blog.peramal.id/wp-content/uploads/2023/05/Kartu-Parsel-Ucapan-Selamat-Menunaikan-Ibadah-Puasa-Sederhana-Hijau-Krem.jpg" alt="menjadi-young-on-top"></a>
+               </div>
+               
+               
+
+            <a class="prev" onclick="nextslide(-1)">&#10094;</a>
+            <a class="next" onclick="nextslide(1)">&#10095;</a>
+       
+        </div>
+    </div>
+
+    <script>
+    
+var slideIndex = 1; 
+
+showSlide(slideIndex);
+
+function nextslide(n) {
+    showSlide(slideIndex += n);
+}
+
+function showSlide(n) {
+    var i;
+    var slides = document.getElementsByClassName("imgslide"); 
+
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+}
+    </script>
+    
+</body>
+</html>

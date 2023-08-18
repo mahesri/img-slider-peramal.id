@@ -1,5 +1,4 @@
 const carousel = document.querySelector(".wrapper");
-const car2 = document.querySelector(".carousel");
 
 let isDragging = false, startX, startScrollLeft;
 
