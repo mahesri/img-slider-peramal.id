@@ -137,6 +137,43 @@ h2 {
     border: 1px solid #fff;
 }
 
+/* Overlay */
+
+.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position:fixed;
+    top :0;
+    left: 0; 
+    background-color: rgba(0, 0, 0, 0);
+    z-index:9999 ;
+    transition: .5s;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.overlay:target {
+    width: auto;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    right: 0; 
+    bottom: 0;
+}
+
+.overlay img {
+    max-height: 100%;
+    border-radius: none;
+    border: none;
+    height: 380px;
+    object-fit: cover;
+    width:280px;
+}
+
+
+
 
 /* Artikel Section */
 
