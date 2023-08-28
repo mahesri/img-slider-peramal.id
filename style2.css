@@ -127,3 +127,13 @@ body {
         grid-auto-columns: 100%;
     }
 }
+
+/* Media Tablet  */
+@media screen and (700px) {
+
+}
+
+/* Media Handphone  */
+@media screen and (450px) {
+
+}
