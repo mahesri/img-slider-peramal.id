@@ -1,29 +1,38 @@
-const carousel = document.querySelector(".wrapper");
+const carouselElements = document.querySelectorAll(".wrapper, .carousel, .kategori, .artikel-slide");
 
-let isDragging = false, startX, startScrollLeft;
+        const draggingStates = {};
 
-const dragStart = (e) => {
-    isDragging = true;
-    carousel.classList.add("dragging");
-    startX = e.pageX;
-    startScrollLeft = carousel.scrollLeft;
-}
+    carouselElements.forEach(element => {
+    let isDragging = false, startX, startScrollLeft;
 
-const dragging = (e) => {
-    if(!isDragging) return;
-    carousel.scrollLeft = startScrollLeft - (e.pageX - startX) ;
-};
+    const dragStart = (e) => {
+        isDragging = true;
+        startX = e.pageX || e.touches[0].pageX;
+        startScrollLeft = element.scrollLeft;
+        draggingStates[element] = true;
+    };
 
-const dragStop = () => {
-    isDragging = false;
-    carousel.classList.remove("dragging");
-}
+    const dragging = (e) => {
+        if (!isDragging) return;
+        if (!draggingStates[element]) return;
 
-carousel.addEventListener("mousemove", dragging);
-carousel.addEventListener("touchmove", dragging);
+        const pageX = e.pageX || e.touches[0].pageX;
+        const scrollDiff = startScrollLeft - (pageX - startX);
 
-carousel.addEventListener("mousedown", dragStart);
-carousel.addEventListener("touchstart", dragStart);
+        element.scrollLeft = scrollDiff;
+    };
 
-document.addEventListener("mouseup", dragStop);
-document.addEventListener("touchend", dragStop);
+    const dragStop = () => {
+        isDragging = false;
+        draggingStates[element] = false;
+    };
+
+    element.addEventListener("mousedown", dragStart);
+    element.addEventListener("touchstart", dragStart);
+
+    element.addEventListener("mousemove", dragging);
+    element.addEventListener("touchmove", dragging);
+
+    element.addEventListener("mouseup", dragStop);
+    element.addEventListener("touchend", dragStop);
+});
