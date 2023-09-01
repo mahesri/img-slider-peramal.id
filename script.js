@@ -1,9 +1,14 @@
 const carouselElements = document.querySelectorAll(".wrapper, .carousel, .kategori, .artikel-slide");
+arrowIcons = document.querySelectorAll(".testi-slider a");
 
         const draggingStates = {};
 
     carouselElements.forEach(element => {
     let isDragging = false, startX, startScrollLeft;
+
+    arrowIcons.forEach = () =>{
+
+    }
 
     const dragStart = (e) => {
         isDragging = true;
