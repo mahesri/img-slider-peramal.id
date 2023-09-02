@@ -129,11 +129,11 @@ body {
 }
 
 /* Media Tablet  */
-@media screen and (700px) {
+@media screen and (max-width: 700px) {
 
 }
 
 /* Media Handphone  */
-@media screen and (450px) {
+@media screen and (max-width: 450px) {
 
-}
+}   
