@@ -114,6 +114,10 @@ body{
     margin: 0.3rem;
 }
 
+.btn:first-child{
+    z-index: 1;
+}
+
 .btn:hover {
     background-color: #F57E20;
 }
@@ -132,6 +136,7 @@ h2 {
 }
 
 .wrapper {
+    scroll-behavior:auto;
     max-height: 100vh;
     display: grid;
     grid-auto-flow: column;
