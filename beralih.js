@@ -9,7 +9,7 @@ carouselElement.forEach(element => {
 
     arrwBtn.forEach(btn => {
         btn.addEventListener("click",  () =>{
-            console.log(btn.id);
+            element.scrollLeft += btn.id  === "left" ? -lebarSlidePertama : lebarSlidePertama;
         });
     });
 
