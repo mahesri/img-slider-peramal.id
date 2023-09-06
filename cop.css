@@ -129,6 +129,29 @@ body{
     border-bottom: 1px solid #F57E20;
 }
 
+/* Overlay */
+
+.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:rgba(0, 0, 0, 0);
+    z-index: 9999;
+    transition: 0.8s;
+}
+
+.overlay:target {
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    background-color:rgba(0, 0, 0, 0.7);
+}
+
+
 h2 {
     margin-top: 8rem;
     color: #F57E20;
