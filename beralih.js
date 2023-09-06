@@ -1,9 +1,17 @@
 const carouselElement = document.querySelectorAll(".wrapper, .carousel, .kategori, .artikel-slide");
+const arrwBtn = document.querySelectorAll(".swipe-btn");
+const lebarSlidePertama = document.querySelector(".slide-testi").offsetWidth;
 
 const draggingStates = {};
 
 carouselElement.forEach(element => {
     let isDraging = false, startX, startScrollLeft;
+
+    arrwBtn.forEach(btn => {
+        btn.addEventListener("click",  () =>{
+            console.log(btn.id);
+        });
+    });
 
     const dragStart = (e) => {
         isDraging = true;
@@ -13,8 +21,9 @@ carouselElement.forEach(element => {
     }
 
     const dragging = (e) => {
-       if(!isDragging) return;
-       if(!draggingStates[element])return;
+       if (!isDraging) return;
+       if (!draggingStates[element])return;
+       
        const pageX = e.pageX || e.touches[0].pageX;
        const positionDiff = startScrollLeft - (pageX - startX);
        element.scrollLeft = positionDiff;

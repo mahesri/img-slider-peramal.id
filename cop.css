@@ -179,7 +179,7 @@ h2 {
     height: 150px;
     object-fit: scale-down;
     width:180px;
-    cursor: pointer;
+    cursor: grab;
     user-select: none;
     border-radius: 5%;
     border: 1px solid #fff;
