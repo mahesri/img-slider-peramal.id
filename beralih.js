@@ -1,17 +1,20 @@
 const carouselElement = document.querySelectorAll(".wrapper, .carousel, .kategori, .artikel-slide");
+const carousel = document.querySelector(".wrapper");
 const arrwBtn = document.querySelectorAll(".swipe-btn");
 const lebarSlidePertama = document.querySelector(".slide-testi").offsetWidth;
+
 
 const draggingStates = {};
 
 carouselElement.forEach(element => {
     let isDraging = false, startX, startScrollLeft;
 
-    arrwBtn.forEach(btn => {
-        btn.addEventListener("click",  () =>{
-            element.scrollLeft += btn.id  === "left" ? -lebarSlidePertama : lebarSlidePertama;
-        });
-    });
+    arrwBtn.forEach(btn =>{
+        btn.addEventListener("click", ()=>{
+            if(element.classList.contains("slide-testi"));
+            carousel.scrollLeft += btn.id === "left" ? -lebarSlidePertama : lebarSlidePertama; 
+        }); 
+     });
 
     const dragStart = (e) => {
         isDraging = true;
@@ -34,14 +37,13 @@ carouselElement.forEach(element => {
         draggingStates[element] = false;
     }    
     
-    element.addEventListener("mousedown", dragStart);
-    element.addEventListener("touchstart", dragStart);
+    element.addEventListener("mousedown", dragStart, { passive: true });
+    element.addEventListener("touchstart", dragStart, { passive: true });
 
-
-    element.addEventListener("mousemove", dragging);
-    element.addEventListener("touchmove", dragging);
+    element.addEventListener("mousemove", dragging, { passive: true });
+    element.addEventListener("touchmove", dragging, { passive: true });
     
-    element.addEventListener("mouseup", dragStop);
-    element.addEventListener("touchend", dragStop);
+    element.addEventListener("mouseup", dragStop, { passive: true });
+    element.addEventListener("touchend", dragStop, { passive: true });
     
 });
